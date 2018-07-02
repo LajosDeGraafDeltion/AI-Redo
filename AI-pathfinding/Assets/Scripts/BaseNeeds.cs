@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseNeeds : MonoBehaviour {
+public abstract class BaseNeeds : MonoBehaviour {
     [Header("Max Stats")]
     public float maxFood;
     public float maxDrink;
@@ -23,4 +23,6 @@ public class BaseNeeds : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public abstract void UseThis();
 }

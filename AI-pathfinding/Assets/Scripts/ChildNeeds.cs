@@ -6,10 +6,7 @@ public class ChildNeeds : BaseNeeds {
 
     void Start()
     {
-        currentDrink = maxDrink;
-        currentFood = maxFood;
-        currentJoy = maxJoy;
-        currentRest = maxRest;
+        UseThis();
     }
 
 
@@ -26,5 +23,13 @@ public class ChildNeeds : BaseNeeds {
         currentJoy -= Random.Range(0.1f, 3.5f);
         currentRest -= Random.Range(0.5f, 5.0f);
         StartCoroutine(DecreaseChildStats());
+    }
+
+    public override void UseThis()
+    {
+        currentDrink = maxDrink;
+        currentFood = maxFood;
+        currentJoy = maxJoy;
+        currentRest = maxRest;
     }
 }

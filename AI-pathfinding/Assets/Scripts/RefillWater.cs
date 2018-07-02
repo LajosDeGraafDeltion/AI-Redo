@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RefillRest : MonoBehaviour {
+public class RefillWater : MonoBehaviour {
     public NPCMove npcMove;
     public AdultNeeds aN;
 
@@ -14,10 +14,11 @@ public class RefillRest : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Adult")
         {
-            aN.currentRest = aN.maxRest;
+            aN.currentDrink = aN.maxDrink;
             npcMove.SetDestination();
         }
     }
 }
+

@@ -7,11 +7,7 @@ public class AdultNeeds : BaseNeeds {
 
 	void Start ()
     {
-        currentDrink = maxDrink;
-        currentFood = maxFood;
-        currentJoy = maxJoy;
-        currentRest = maxRest;
-        StartCoroutine(DecreaseStats());
+        UseThis();
     }
 	
 
@@ -27,6 +23,15 @@ public class AdultNeeds : BaseNeeds {
         currentFood -= Random.Range(0.1f, 5f);
         currentJoy -= Random.Range(0.1f, 6.5f);
         currentRest -= Random.Range(0.5f, 7.0f);
+        StartCoroutine(DecreaseStats());
+    }
+
+    public override void UseThis()
+    {
+        currentDrink = maxDrink;
+        currentFood = maxFood;
+        currentJoy = maxJoy;
+        currentRest = maxRest;
         StartCoroutine(DecreaseStats());
     }
 }

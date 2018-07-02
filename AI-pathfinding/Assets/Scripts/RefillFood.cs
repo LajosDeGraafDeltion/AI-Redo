@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RefillJoy : MonoBehaviour {
-
+public class RefillFood : MonoBehaviour {
     public NPCMove npcMove;
     public AdultNeeds aN;
 
 
-
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Adult")
         {
-            aN.currentJoy = aN.maxJoy;
+            aN.currentFood = aN.maxFood;
             npcMove.SetDestination();
         }
     }
 }
+
